@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajmal Super 40 | Educational Homepage</title>
+<style>
+:root{--navy:#082b5b;--blue:#1262a8;--red:#b7192c;--pale:#edf6ff;--ink:#1f2937;--muted:#5b6574;--line:#d9e2ec}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#eef2f6;line-height:1.45}
+a{color:var(--blue)}
+img{display:block;max-width:100%}
+.site{max-width:1400px;margin:auto;background:white;box-shadow:0 4px 24px #0f172a12}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 3%;background:white}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-mark{width:52px;height:52px;border:2px solid var(--navy);border-radius:50%;display:grid;place-items:center;color:var(--navy);font-size:25px;font-weight:bold;flex-shrink:0}
+.brand h1{font-size:clamp(20px,3vw,30px);line-height:1.1;color:var(--navy);font-weight:900}
+.brand h1 span{color:var(--red)}
+.brand p{font-size:11px;font-style:italic;color:#4b5563}
+.motto{text-align:right;font-family:Georgia,serif;font-style:italic;font-size:12px;color:var(--navy);max-width:230px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:var(--navy)}
+nav a{color:white;text-decoration:none;padding:12px 16px;font-size:13px;border-right:1px solid #ffffff24}
+nav a:hover,nav a:focus{background:var(--red)}
+.hero{position:relative;min-height:270px;display:flex;align-items:center;background:#dbeafe;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.82) 42%,rgba(255,255,255,.08) 100%)}
+.hero-copy{position:relative;z-index:1;padding:34px 5%;max-width:600px;animation:rise .8s ease both}
+.hero h2{font-family:Georgia,serif;font-size:clamp(28px,4.4vw,48px);line-height:1.08;color:#102b4e;margin:7px 0}
+.hero h2 span{color:var(--red)}
+.hero p{font-family:Georgia,serif;font-size:14px;margin:8px 0 16px}
+.eyebrow{color:var(--red);font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.2px}
+.btn{display:inline-block;background:var(--red);color:white;padding:9px 16px;border-radius:20px;text-decoration:none;font-size:12px;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{background:var(--navy)}
+.content{padding:18px 2.5% 28px}
+.top-grid{display:grid;grid-template-columns:1.05fr 1.05fr 1fr;gap:14px}
+.panel{border:1px solid var(--line);background:#fff;min-width:0}
+.panel h3,.section-title{font-family:Georgia,serif;font-size:19px;color:var(--navy);padding:10px 12px 6px}
+.panel-body{padding:0 12px 13px;font-size:12px}
+.about-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;align-items:start}
+.about-inner p{color:#3f4855}
+.about-inner img{width:100%;height:130px;object-fit:cover}
+.facility-list{list-style:none}
+.facility-list li{margin:5px 0;display:flex;align-items:flex-start;gap:7px}
+.facility-list li span{width:17px;flex-shrink:0}
+table{border-collapse:collapse;width:100%;font-size:11px}
+th{background:#eaf3ff;color:var(--navy);text-align:left}
+td,th{padding:7px 6px;border:1px solid #dce4ed;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafc}
+.lower-grid{display:grid;grid-template-columns:1.05fr .95fr 1fr;gap:14px;margin-top:17px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.gallery-grid figure{border:1px solid var(--line)}
+.gallery-grid img{width:100%;height:100px;object-fit:cover}
+.gallery-grid figcaption{font-size:10px;padding:4px 6px;color:#344054}
+.links-list{list-style:none}
+.links-list li{padding:5px 0;border-bottom:1px solid #edf0f4}
+.links-list li:last-child{border-bottom:0}
+.links-list a{font-size:12px;text-decoration:none}
+.links-list a:hover{text-decoration:underline}
+.video-frame{width:100%;aspect-ratio:16/9;border:0;background:#e5e7eb}
+.contact-stack{display:grid;gap:12px}
+.map-placeholder{min-height:105px;background:linear-gradient(135deg,#d9ead3,#eef3e7);display:grid;place-items:center;text-align:center;color:#334155;padding:12px;font-size:12px;border:1px solid #cbd5c0}
+form{display:grid;gap:8px}
+label{font-size:11px;font-weight:bold;color:#334155}
+input,select,textarea{width:100%;padding:8px;border:1px solid #cbd5e1;border-radius:3px;font:inherit;font-size:12px;background:#fff}
+textarea{min-height:55px;resize:vertical}
+.form-row{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:7px}
+.form-row.message{align-items:start}
+.form-actions{text-align:right}
+#status{font-size:11px;color:#166534;margin-top:5px}
+footer{background:var(--navy);color:white;padding:11px 3%;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:10px}
+footer a{color:white}
+.social{white-space:nowrap}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.top-grid{grid-template-columns:1fr 1fr}.top-grid .panel:last-child{grid-column:1/-1}.lower-grid{grid-template-columns:1fr 1fr}.lower-grid>.panel:last-child{grid-column:1/-1}}
+@media(max-width:560px){.masthead{align-items:flex-start;padding:12px 4%}.logo-mark{width:42px;height:42px;font-size:20px}.brand{gap:8px}.brand p{font-size:9px}.motto{display:none}nav{justify-content:flex-start;padding:4px;gap:0}nav a{padding:9px 10px;font-size:11px}.hero{min-height:250px}.hero-copy{padding:25px 5%;max-width:90%}.hero:after{background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.7))}.content{padding:12px 3% 22px}.top-grid,.lower-grid{grid-template-columns:1fr}.top-grid .panel:last-child,.lower-grid>.panel:last-child{grid-column:auto}.panel h3,.section-title{font-size:18px}.gallery-grid img{height:135px}footer{flex-direction:column;text-align:center}.about-inner{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="site">
+<header class="masthead">
+  <div class="brand">
+    <div class="logo-mark" aria-label="Sample education logo">A</div>
+    <div><h1>AJMAL <span>SUPER 40</span></h1><p>A Gateway to Bright Futures</p></div>
+  </div>
+  <p class="motto">“Education for All,<br>Empowerment for a Better Tomorrow”<br><small>— Educational Project</small></p>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="#home">Home</a><a href="#about">About Us</a><a href="#facilities">Courses &amp; Facilities</a><a href="#students">Student Achievements</a><a href="#gallery">Gallery</a><a href="#resources">Useful Links</a><a href="#contact">Contact Us</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=85" alt="Educational campus building surrounded by trees">
+  <div class="hero-copy">
+    <div class="eyebrow">Nurturing talent, building leaders</div>
+    <h2>Welcome to<br><span>Ajmal Super 40</span></h2>
+    <p>Learning today. Building a brighter tomorrow.</p>
+    <a class="btn" href="#about">Know More</a>
+  </div>
+</section>
+
+<div class="content">
+  <div class="top-grid">
+    <section class="panel reveal" id="about">
+      <h3>About Us</h3>
+      <div class="panel-body about-inner">
+        <div><p>This student-created project introduces Ajmal Super 40 and highlights the importance of educational opportunity, academic guidance, and personal growth. A supportive learning environment can help students develop knowledge, confidence, and skills for the future.</p></div>
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Students learning together in a classroom" loading="lazy">
+      </div>
+      <div class="panel-body"><strong>Project mission:</strong> Celebrate learning, curiosity, and student achievement.</div>
+    </section>
+
+    <section class="panel reveal" id="facilities">
+      <h3>Courses &amp; Facilities</h3>
+      <div class="panel-body">
+        <ul class="facility-list">
+          <li><span>🎓</span><span>Subject-wise academic support</span></li>
+          <li><span>💻</span><span>Computer and digital learning</span></li>
+          <li><span>📚</span><span>Library and reference materials</span></li>
+          <li><span>👩‍🏫</span><span>Guidance and doubt-clearing</span></li>
+          <li><span>📝</span><span>Practice tests and revision</span></li>
+          <li><span>🌱</span><span>Co-curricular activities</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="students">
+      <h3>Student Achievements</h3>
+      <div class="panel-body">
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>S.No.</th><th>Student Name</th><th>Class</th><th>Achievement</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Ayaan Ahmed</td><td>XI</td><td>Science quiz finalist</td></tr>
+              <tr><td>2</td><td>Nabiha Hussain</td><td>XII</td><td>Qualified mock test</td></tr>
+              <tr><td>3</td><td>Rahul Das</td><td>XI</td><td>Maths challenge participant</td></tr>
+              <tr><td>4</td><td>Salma Begum</td><td>XII</td><td>Research presentation</td></tr>
+              <tr><td>5</td><td>Imran Ali</td><td>XI</td><td>Consistent progress</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:7px;color:#64748b;font-size:10px">Note: Names and achievements are fictional examples for this assignment.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="lower-grid">
+    <section class="panel reveal" id="gallery">
+      <h3>Gallery</h3>
+      <div class="panel-body gallery-grid">
+        <figure><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=700&q=80" alt="Students working together on a project" loading="lazy"><figcaption>Student teamwork</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" alt="Classroom teaching and learning" loading="lazy"><figcaption>Classroom learning</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80" alt="Students reading and studying" loading="lazy"><figcaption>Study time</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=700&q=80" alt="Campus building with trees" loading="lazy"><figcaption>Campus life</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="resources">
+      <h3>Useful Links</h3>
+      <div class="panel-body">
+        <ul class="links-list">
+          <li>🔗 <a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer">NCERT — textbooks</a></li>
+          <li>🔗 <a href="https://diksha.gov.in/" target="_blank" rel="noopener noreferrer">DIKSHA — learning resources</a></li>
+          <li>🔗 <a href="https://jeemain.nta.nic.in/" target="_blank" rel="noopener noreferrer">JEE Main official website</a></li>
+          <li>🔗 <a href="https://neet.nta.nic.in/" target="_blank" rel="noopener noreferrer">NEET official website</a></li>
+          <li>🔗 <a href="https://www.education.gov.in/" target="_blank" rel="noopener noreferrer">Ministry of Education</a></li>
+          <li>🔗 <a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer">Khan Academy — free lessons</a></li>
+        </ul>
+        <h3 style="padding-left:0;margin-top:14px;font-size:16px">Watch a Video</h3>
+        <p style="font-size:11px;color:#64748b;margin-bottom:7px">An example educational video (internet required).</p>
+        <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/aircAruvnKk" title="Educational video about neural networks" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="panel reveal" id="contact">
+      <h3>Our Location</h3>
+      <div class="panel-body contact-stack">
+        <div class="map-placeholder"><div><strong>Location / Map</strong><br>Add the verified institution address or map embed here.<br><a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Open Google Maps</a></div></div>
+        <div>
+          <h3 style="padding:0 0 8px;font-size:16px">Contact Us / Feedback Form</h3>
+          <form id="feedback-form">
+            <div class="form-row"><label for="name">Name:</label><input id="name" name="name" placeholder="Enter your name" required></div>
+            <div class="form-row"><label for="class">Class:</label><select id="class" name="class" required><option value="">Select class</option><option>Class IX</option><option>Class X</option><option>Class XI</option><option>Class XII</option><option>Other</option></select></div>
+            <div class="form-row"><label for="email">Email:</label><input id="email" name="email" type="email" placeholder="Optional email"></div>
+            <div class="form-row message"><label for="feedback">Message:</label><textarea id="feedback" name="feedback" placeholder="Write your feedback here..." required></textarea></div>
+            <div class="form-actions"><button class="btn" type="submit">Submit</button></div>
+            <p id="status" role="status" aria-live="polite"></p>
+          </form>
+          <p style="font-size:10px;color:#64748b;margin-top:7px">Demo form only: it does not send or store information.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+<footer>
+  <p>© 2026 Ajmal Super 40 — School Website Project. Verify official details before submission.</p>
+  <p class="social">Education • Opportunity • Growth</p>
+</footer>
+</div>
+<script>
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries, instance) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        instance.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.08});
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('visible'));
+}
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const studentName = document.getElementById('name').value.trim();
+  document.getElementById('status').textContent =
+    'Thank you, ' + studentName + '! This demo form was submitted locally, but no data was sent or saved.';
+  this.reset();
+});
+</script>
+</body>
+</html>
